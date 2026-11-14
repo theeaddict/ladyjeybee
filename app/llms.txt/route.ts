@@ -12,7 +12,7 @@ export function GET() {
     "",
     `> Home-care services based in ${site.location.full}. "${site.tagline}"`,
     "",
-    `${site.fullName} provides compassionate, reliable and professional care to individuals and families who need support at home in Diani, Ukunda and Kwale County, on Kenya's South Coast.`,
+    `${site.fullName} provides compassionate, reliable and professional care to individuals and families who need support at home in Diani and Kwale County, on Kenya's South Coast.`,
     "",
     "## Contact",
     `- Phone / WhatsApp: ${site.phone.display}`,

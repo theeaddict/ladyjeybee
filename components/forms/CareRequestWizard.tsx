@@ -323,7 +323,7 @@ export function CareRequestWizard() {
                   />
                 )}
               </Field>
-              <Field id="location" label="Preferred care location" required error={errors.location} hint="Town or area, e.g. Diani, Ukunda.">
+              <Field id="location" label="Preferred care location" required error={errors.location} hint="Town or area, e.g. Diani.">
                 {(p) => (
                   <input {...p} className="input" autoComplete="address-level2" value={data.location} onChange={(e) => set("location", e.target.value)} />
                 )}

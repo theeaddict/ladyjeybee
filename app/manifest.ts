@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: site.fullName,
     short_name: site.name,
-    description: "Compassionate home-care services in Diani, Ukunda, Kwale County, Kenya.",
+    description: "Compassionate home-care services in Diani, Kwale County, Kenya.",
     start_url: "/",
     display: "standalone",
     background_color: "#fbf7ef",

@@ -6,7 +6,7 @@ import { PageHero } from "@/components/sections/PageHero";
 export const metadata: Metadata = {
   title: "Request Care — Home Care Enquiry",
   description:
-    "Request home care in Diani, Ukunda or anywhere in Kwale County. Tell us who needs care and the support required, and our team will get back to you.",
+    "Request home care in Diani or anywhere in Kwale County. Tell us who needs care and the support required, and our team will get back to you.",
   alternates: { canonical: "/request-care" },
 };
 

@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps<"/services/[slug]">
   const service = getService(slug);
   if (!service) return {};
   return {
-    title: `${service.shortTitle} at Home in Diani & Ukunda`,
+    title: `${service.shortTitle} in Diani, Kwale County`,
     description: service.seoDescription,
     alternates: { canonical: `/services/${service.slug}` },
     openGraph: { title: `${service.title} | ${site.name}`, description: service.seoDescription },

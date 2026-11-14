@@ -12,7 +12,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "How It Works — Arranging Home Care",
   description:
-    "Arranging home care in Diani, Ukunda and Kwale County is simple: contact us, discuss your needs, plan the support and begin care.",
+    "Arranging home care in Diani and Kwale County is simple: contact us, discuss your needs, plan the support and begin care.",
   alternates: { canonical: "/how-it-works" },
 };
 

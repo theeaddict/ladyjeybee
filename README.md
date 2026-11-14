@@ -1,6 +1,6 @@
 # Lady Jeybee Aurelia — Health & Home Care Services
 
-Website for a home-care service in Diani, Ukunda, Kwale County, Kenya.
+Website for a home-care service in Diani, Kwale County, Kenya.
 Built with Next.js (App Router), TypeScript and [Lenis](https://lenis.darkroom.engineering/) smooth scrolling.
 
 ## Run locally
@@ -56,7 +56,7 @@ Copy `.env.example` to `.env.local` (or add the same variables in your hosting d
 ## SEO and AEO (search + AI answer engines)
 
 - Search phrases are in `content/seo.ts` (`keywords`) and appear naturally in page titles, descriptions and copy.
-- Each page has its own title and description; service pages include the location ("… at Home in Diani & Ukunda").
+- Each page has its own title and description; service pages include the location ("… in Diani, Kwale County").
 - Structured data (schema.org): `LocalBusiness` + `WebSite` on every page, `FAQPage` on the homepage,
   `Service` on each service page and `BreadcrumbList` on inner pages (`lib/schema.ts`).
 - The homepage FAQ (`content/seo.ts`, `faqs`) answers common questions in plain language — the format Google and AI assistants quote.
@@ -64,7 +64,7 @@ Copy `.env.example` to `.env.local` (or add the same variables in your hosting d
 - `/sitemap.xml`, `/robots.txt`, `/manifest.webmanifest`, the favicon and a 1200×630 link-preview image are generated automatically.
 
 After launch: add the site to Google Search Console, submit `/sitemap.xml`, and create a Google Business Profile
-for the Diani/Ukunda location — the profile matters most for local "near me" searches.
+for the Diani location — the profile matters most for local "near me" searches.
 
 ## Where to edit things
 

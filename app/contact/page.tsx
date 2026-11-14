@@ -7,9 +7,9 @@ import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Home Care in Diani & Ukunda",
+  title: "Contact Us — Home Care in Diani, Kwale County",
   description:
-    "Contact Lady Jeybee Aurelia Health & Home Care Services in Diani, Ukunda, Kwale County. Call +254 705 865 570, WhatsApp or email lakumu022@gmail.com.",
+    "Contact Lady Jeybee Aurelia Health & Home Care Services in Diani, Kwale County. Call +254 705 865 570, WhatsApp or email lakumu022@gmail.com.",
   alternates: { canonical: "/contact" },
 };
 

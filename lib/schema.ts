@@ -16,7 +16,7 @@ export function businessSchema() {
     alternateName: site.name,
     slogan: site.tagline,
     description:
-      "Compassionate, reliable and professional home-care services for individuals and families in Diani, Ukunda and Kwale County, Kenya.",
+      "Compassionate, reliable and professional home-care services for individuals and families in Diani and Kwale County, Kenya.",
     telephone: site.phone.tel,
     email: site.email,
     url: site.url,
@@ -24,7 +24,7 @@ export function businessSchema() {
     image: `${site.url}/opengraph-image`,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Diani, Ukunda",
+      addressLocality: "Diani",
       addressRegion: site.location.county,
       addressCountry: "KE",
     },

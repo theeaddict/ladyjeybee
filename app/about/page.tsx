@@ -14,7 +14,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "About Us — Home Care in Diani, Kwale County",
   description:
-    "Lady Jeybee Aurelia Health & Home Care Services provides compassionate, reliable and professional home-based care for families in Diani, Ukunda and Kwale County.",
+    "Lady Jeybee Aurelia Health & Home Care Services provides compassionate, reliable and professional home-based care for families in Diani and Kwale County.",
   alternates: { canonical: "/about" },
 };
 
@@ -44,7 +44,7 @@ export default function AboutPage() {
             Care Is Not Just a Job, <em>But a Calling</em>
           </>
         }
-        text="A home-care service based in Diani, Ukunda, providing compassionate, reliable and professional care to individuals and families at home."
+        text="A home-care service based in Diani, Kwale County, providing compassionate, reliable and professional care to individuals and families at home."
         path="/about"
         crumbs={[{ label: "About Us" }]}
       />

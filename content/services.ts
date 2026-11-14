@@ -43,7 +43,7 @@ export const services: Service[] = [
     image: "elderly",
     icon: "elderly",
     seoDescription:
-      "Elderly care at home in Diani, Ukunda and Kwale County — assistance with daily activities, personal care, comfort and companionship.",
+      "Elderly care at home in Diani and Kwale County — assistance with daily activities, personal care, comfort and companionship.",
   },
   {
     slug: "home-nursing-support",
@@ -66,7 +66,7 @@ export const services: Service[] = [
     image: "nursing",
     icon: "nurse",
     seoDescription:
-      "Home-based nursing support in Ukunda and Diani, Kwale County, according to each client's needs.",
+      "Home-based nursing support in Diani, Kwale County, according to each client's needs.",
   },
   {
     slug: "palliative-care",
@@ -110,7 +110,7 @@ export const services: Service[] = [
     image: "postOp",
     icon: "bed",
     seoDescription:
-      "Post-operative home care in Kwale, Diani and Ukunda — support at home while recovering after surgery.",
+      "Post-operative home care in Kwale and Diani — support at home while recovering after surgery.",
   },
   {
     slug: "chronic-illness-care",
@@ -132,7 +132,7 @@ export const services: Service[] = [
     image: "chronic",
     icon: "heartbeat",
     seoDescription:
-      "Personalised home-based care for sick and chronically ill individuals in Diani, Ukunda and Kwale County.",
+      "Personalised home-based care for sick and chronically ill individuals in Diani and Kwale County.",
   },
   {
     slug: "childcare",
@@ -152,7 +152,7 @@ export const services: Service[] = [
     image: "childcare",
     icon: "child",
     seoDescription:
-      "Childcare and children's support at home in Diani and Ukunda, Kwale County, according to each child's needs.",
+      "Childcare and children's support at home in Diani, Kwale County, according to each child's needs.",
   },
   {
     slug: "wound-dressing",
@@ -195,7 +195,7 @@ export const services: Service[] = [
     image: "hygiene",
     icon: "shower",
     seoDescription:
-      "Personal hygiene, bathing and grooming support at home in Diani, Ukunda and Kwale County.",
+      "Personal hygiene, bathing and grooming support at home in Diani and Kwale County.",
   },
   {
     slug: "medication-reminders",
@@ -212,7 +212,7 @@ export const services: Service[] = [
     image: "medication",
     icon: "pill",
     seoDescription:
-      "Medication reminders and monitoring support at home in Kwale County, Diani and Ukunda.",
+      "Medication reminders and monitoring support at home in Kwale County and Diani.",
   },
   {
     slug: "mobility-companionship",
@@ -236,7 +236,7 @@ export const services: Service[] = [
     image: "mobility",
     icon: "walker",
     seoDescription:
-      "Feeding, mobility assistance, companionship and vital signs monitoring at home in Diani, Ukunda and Kwale County.",
+      "Feeding, mobility assistance, companionship and vital signs monitoring at home in Diani and Kwale County.",
   },
 ];
 

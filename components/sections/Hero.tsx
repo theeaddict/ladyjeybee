@@ -10,7 +10,7 @@ export function Hero() {
       </div>
       <div className="container hero__inner">
         <div className="hero__copy">
-          <p className="eyebrow eyebrow--light hero__eyebrow">Professional Home Care in Diani &amp; Ukunda</p>
+          <p className="eyebrow eyebrow--light hero__eyebrow">Professional Home Care in Diani, Kwale County</p>
           <h1 id="hero-title" className="hero__title">
             <span className="line"><span>Compassionate Care,</span></span>
             <span className="line"><em>Right at Your</em></span>
@@ -28,7 +28,7 @@ export function Hero() {
               Talk to Our Team
             </Button>
           </div>
-          <p className="hero__area">Based in Diani, Ukunda, Kwale County, Kenya</p>
+          <p className="hero__area">Based in Diani, Kwale County, Kenya</p>
         </div>
       </div>
       <svg className="hero__curve" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">

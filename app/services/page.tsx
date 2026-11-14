@@ -7,9 +7,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Home Care Services in Diani, Ukunda & Kwale County",
+  title: "Home Care Services in Diani & Kwale County",
   description:
-    "Explore our home-care services in Diani, Ukunda and Kwale County: elderly care, home-based nursing support, palliative care, post-operative care, childcare and more.",
+    "Explore our home-care services in Diani and Kwale County: elderly care, home-based nursing support, palliative care, post-operative care, childcare and more.",
   alternates: { canonical: "/services" },
 };
 

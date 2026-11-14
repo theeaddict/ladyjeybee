@@ -11,10 +11,10 @@ export const site = {
   /** Set NEXT_PUBLIC_SITE_URL to the real domain when the site is deployed. */
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   location: {
-    area: "Diani, Ukunda",
+    area: "Diani",
     county: "Kwale County",
     country: "Kenya",
-    full: "Diani, Ukunda, Kwale County, Kenya",
+    full: "Diani, Kwale County, Kenya",
   },
   phone: {
     display: "+254 705 865 570",
@@ -23,7 +23,7 @@ export const site = {
   /** International format without "+" for wa.me links. */
   whatsapp: "254705865570",
   email: "lakumu022@gmail.com",
-  areasServed: ["Diani", "Ukunda", "Kwale County"],
+  areasServed: ["Diani", "Kwale County"],
   vision:
     "To become a trusted name in home-based care by bringing quality, compassionate care right to people's homes.",
   mission:

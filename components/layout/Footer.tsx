@@ -89,7 +89,7 @@ export function Footer() {
           &copy; <Year /> {site.fullName}. All rights reserved.
         </p>
         <p>
-          Home care in Diani, Ukunda and Kwale County, Kenya · <Link href="/privacy">Privacy policy</Link>
+          Home care in Diani and Kwale County, Kenya · <Link href="/privacy">Privacy policy</Link>
         </p>
       </div>
     </footer>

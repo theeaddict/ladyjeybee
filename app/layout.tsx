@@ -29,11 +29,11 @@ const sans = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Home Care Services in Diani & Ukunda, Kwale County | Lady Jeybee Aurelia",
-    template: "%s | Lady Jeybee Aurelia Home Care",
+    default: "Home Care Services in Diani, Kwale County | Lady Jeybee Aurelia",
+    template: "%s | Lady Jeybee Aurelia",
   },
   description:
-    "Compassionate, reliable and professional home-based care in Diani, Ukunda and Kwale County — elderly care, home nursing support, palliative care, post-operative care and more.",
+    "Compassionate, reliable and professional home-based care in Diani and Kwale County — elderly care, home nursing support, palliative care, post-operative care and more.",
   keywords,
   applicationName: site.fullName,
   authors: [{ name: site.fullName }],
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     locale: "en_KE",
     siteName: site.fullName,
     title: "Lady Jeybee Aurelia Health & Home Care Services",
-    description: "Compassionate care, right at your doorstep. Home-care services in Diani, Ukunda and Kwale County.",
+    description: "Compassionate care, right at your doorstep. Home-care services in Diani and Kwale County.",
   },
   twitter: { card: "summary_large_image" },
   alternates: { canonical: "/" },

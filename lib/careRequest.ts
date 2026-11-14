@@ -79,7 +79,7 @@ export function validateStep(step: number, d: CareRequest): Errors {
   }
   if (step === 3) {
     if (d.description.trim().length < 10) e.description = "Add a short description of the support needed (at least 10 characters).";
-    if (isBlank(d.location)) e.location = "Enter where care is needed, for example Diani or Ukunda.";
+    if (isBlank(d.location)) e.location = "Enter where care is needed, for example Diani or Kwale.";
     if (!d.contactMethod) e.contactMethod = "Choose how you would like us to contact you.";
     else if (d.contactMethod === "Email" && isBlank(d.email))
       e.contactMethod = "You chose email — add your email address in step 1, or pick another method.";
