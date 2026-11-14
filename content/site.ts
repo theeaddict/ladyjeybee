@@ -6,6 +6,8 @@ export const site = {
   fullName: "Lady Jeybee Aurelia Health & Home Care Services",
   descriptor: "Health & Home Care Services",
   tagline: "Care is not just a job but a calling.",
+  /** True on temporary/staging domains so search engines do not index them. Unset on the real domain. */
+  noindex: process.env.NEXT_PUBLIC_NOINDEX === "true",
   /** Set NEXT_PUBLIC_SITE_URL to the real domain when the site is deployed. */
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   location: {

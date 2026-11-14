@@ -48,7 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   alternates: { canonical: "/" },
-  robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  robots: site.noindex
+    ? { index: false, follow: false }
+    : { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   // Search Console / Meta domain verification codes, set when the site goes live.
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,

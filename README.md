@@ -13,12 +13,34 @@ npm run dev
 Production build: `npm run build && npm start`.
 Set `NEXT_PUBLIC_SITE_URL` to the live domain so canonical URLs, the sitemap and Open Graph tags are correct.
 
+## Hosting (VPS + Docker)
+
+The site runs as a Docker container on the VPS behind Caddy. See `deploy/`:
+
+| File | Purpose |
+| --- | --- |
+| `Dockerfile`, `docker-compose.yml` | Builds and runs the site on `127.0.0.1:3100` |
+| `deploy/deploy.sh` | Syncs code to the VPS, builds the image and restarts the container |
+| `deploy/ladyjeybee.caddy` | Caddy site entry for `ladyjeybee.biasharaos.com` |
+| `deploy/install-caddy.sh` | Installs that entry on the VPS (needs `sudo`), validating the whole Caddy config before reloading |
+
+**Redeploy after a change:** `./deploy/deploy.sh`
+
+**Moving to the client's own domain**
+1. Point the client's domain at the VPS (A record to `13.140.182.206`, DNS-only, so Caddy can issue a Let's Encrypt certificate).
+2. Add a Caddy block for the new domain (copy `deploy/ladyjeybee.caddy`, remove the `X-Robots-Tag` line and `import origin_tls`) and reload Caddy.
+3. Redeploy with the new address and indexing switched on: `SITE_URL=https://clientdomain.co.ke NOINDEX= ./deploy/deploy.sh`
+4. Optionally redirect `ladyjeybee.biasharaos.com` to the new domain, then submit the new `/sitemap.xml` in Google Search Console.
+
+While `NEXT_PUBLIC_NOINDEX=true` (the temporary subdomain) the site tells search engines not to index it.
+
 ## Settings for going live
 
 Copy `.env.example` to `.env.local` (or add the same variables in your hosting dashboard):
 
 | Variable | What it does |
 | --- | --- |
+| `NEXT_PUBLIC_NOINDEX` | `true` on temporary domains so search engines skip the site. Leave unset on the real domain |
 | `NEXT_PUBLIC_SITE_URL` | Live domain — used for canonical URLs, the sitemap, structured data and link previews |
 | `NEXT_PUBLIC_META_PIXEL_ID` | Meta Pixel ID from Meta Events Manager. Empty = pixel off |
 | `NEXT_PUBLIC_META_DOMAIN_VERIFICATION` | Meta Business domain verification code |

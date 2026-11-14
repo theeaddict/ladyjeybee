@@ -1,0 +1,27 @@
+# Runs the website on the VPS. Caddy proxies the domain to 127.0.0.1:${APP_HOST_PORT}.
+services:
+  app:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:?set NEXT_PUBLIC_SITE_URL}
+        NEXT_PUBLIC_NOINDEX: ${NEXT_PUBLIC_NOINDEX:-}
+        NEXT_PUBLIC_META_PIXEL_ID: ${NEXT_PUBLIC_META_PIXEL_ID:-}
+        NEXT_PUBLIC_META_DOMAIN_VERIFICATION: ${NEXT_PUBLIC_META_DOMAIN_VERIFICATION:-}
+        NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: ${NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION:-}
+    image: ladyjeybee-site:latest
+    container_name: ladyjeybee-app
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${APP_HOST_PORT:-3100}:3000"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s

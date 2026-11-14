@@ -1,0 +1,17 @@
+# Lady Jeybee Aurelia — temporary subdomain ladyjeybee.biasharaos.com
+# Docker app on 127.0.0.1:3100 (compose project /home/biasharaos/ladyjeybee).
+# An exact host beats the *.biasharaos.com wildcard, so BiasharaOS never sees these requests.
+# Install: sudo cp deploy/ladyjeybee.caddy /etc/caddy/sites.d/ladyjeybee.caddy
+#
+# Deliberately NOT importing security_headers: that CSP is written for the BiasharaOS frontend.
+# While on this temporary subdomain, tell search engines not to index it (removed for the real domain).
+ladyjeybee.biasharaos.com {
+	import origin_tls
+	encode zstd gzip
+	request_body {
+		max_size 2MB
+	}
+	header X-Robots-Tag "noindex, nofollow"
+	header -Server
+	reverse_proxy 127.0.0.1:3100
+}
