@@ -21,13 +21,13 @@ The site runs as a Docker container on the VPS behind Caddy. See `deploy/`:
 | --- | --- |
 | `Dockerfile`, `docker-compose.yml` | Builds and runs the site on `127.0.0.1:3100` |
 | `deploy/deploy.sh` | Syncs code to the VPS, builds the image and restarts the container |
-| `deploy/caddy/*.caddy` | Caddy entries: the live domain, and the redirect from the old temporary subdomain |
-| `deploy/install-caddy.sh` | Installs a Caddy entry on the VPS (needs `sudo`): `site` or `redirect`. Validates the whole config before reloading and rolls back on error |
+| `deploy/caddy/*.caddy` | Caddy entry for the live domain |
+| `deploy/install-caddy.sh` | Installs the Caddy entry on the VPS (needs `sudo`): `site`, or `remove` for the old temporary subdomain. Validates the whole config before reloading and rolls back on error |
 
 **Redeploy after a change:** `./deploy/deploy.sh`
 
 **Live address:** https://ladyjeybeeaurelia.co.ke (the client's own domain, served directly by Caddy with a free Let's Encrypt certificate).
-`ladyjeybee.biasharaos.com` redirects to it.
+The old temporary address `ladyjeybee.biasharaos.com` has been removed from the server.
 
 **DNS for the domain** (set where the domain's DNS is managed): `A` record `@` and `A` record `www`, both to `13.140.182.206`.
 Remove any `AAAA` records and old parking records. Keep any `MX`/`TXT` records used for email.
