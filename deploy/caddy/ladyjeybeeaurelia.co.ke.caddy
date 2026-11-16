@@ -1,0 +1,26 @@
+# Lady Jeybee Aurelia — ladyjeybeeaurelia.co.ke (the client's own domain)
+# Docker app on 127.0.0.1:3100 (compose project /home/biasharaos/ladyjeybee).
+#
+# This domain points straight at the server, not through Cloudflare, so there is
+# deliberately NO `import origin_tls` (that certificate is Cloudflare's and only
+# Cloudflare trusts it). With no `tls` line, Caddy gets a free Let's Encrypt
+# certificate on its own, which needs the A records to already point here and
+# ports 80 and 443 open.
+
+www.ladyjeybeeaurelia.co.ke {
+	redir https://ladyjeybeeaurelia.co.ke{uri} permanent
+}
+
+ladyjeybeeaurelia.co.ke {
+	encode zstd gzip
+	request_body {
+		max_size 2MB
+	}
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		-Server
+	}
+	reverse_proxy 127.0.0.1:3100
+}

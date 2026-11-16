@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 # Deploys the website to the VPS: sync code -> build image -> (re)start container.
-# Usage:  deploy/deploy.sh                      # temporary subdomain (not indexed by Google)
-#         SITE_URL=https://clientdomain.co.ke NOINDEX= deploy/deploy.sh   # final domain
+# Usage:  deploy/deploy.sh                       # live site: https://ladyjeybeeaurelia.co.ke (indexed by Google)
+#         SITE_URL=https://other.example NOINDEX=true deploy/deploy.sh    # a temporary/staging address (not indexed)
 #
 # The Caddy entry (needs sudo on the server) is installed separately: see deploy/README.md
 set -euo pipefail
 
 HOST="${DEPLOY_HOST:-13.140.182.206}"          # SSH settings come from ~/.ssh/config (port 2222)
 REMOTE_DIR="${REMOTE_DIR:-/home/biasharaos/ladyjeybee}"
-SITE_URL="${SITE_URL:-https://ladyjeybee.biasharaos.com}"
-NOINDEX="${NOINDEX-true}"                       # "true" while on a temporary domain; empty on the real one
+SITE_URL="${SITE_URL:-https://ladyjeybeeaurelia.co.ke}"
+NOINDEX="${NOINDEX-}"                           # "true" only on a temporary domain; empty on the real one
 PORT="${APP_HOST_PORT:-3100}"
 
 cd "$(dirname "$0")/.."

@@ -1,0 +1,6 @@
+# The temporary subdomain now forwards to the client's own domain (permanent redirect),
+# so any link already shared with the old address keeps working.
+ladyjeybee.biasharaos.com {
+	import origin_tls
+	redir https://ladyjeybeeaurelia.co.ke{uri} permanent
+}

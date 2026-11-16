@@ -21,18 +21,25 @@ The site runs as a Docker container on the VPS behind Caddy. See `deploy/`:
 | --- | --- |
 | `Dockerfile`, `docker-compose.yml` | Builds and runs the site on `127.0.0.1:3100` |
 | `deploy/deploy.sh` | Syncs code to the VPS, builds the image and restarts the container |
-| `deploy/ladyjeybee.caddy` | Caddy site entry for `ladyjeybee.biasharaos.com` |
-| `deploy/install-caddy.sh` | Installs that entry on the VPS (needs `sudo`), validating the whole Caddy config before reloading |
+| `deploy/caddy/*.caddy` | Caddy entries: the live domain, and the redirect from the old temporary subdomain |
+| `deploy/install-caddy.sh` | Installs a Caddy entry on the VPS (needs `sudo`): `site` or `redirect`. Validates the whole config before reloading and rolls back on error |
 
 **Redeploy after a change:** `./deploy/deploy.sh`
 
-**Moving to the client's own domain**
-1. Point the client's domain at the VPS (A record to `13.140.182.206`, DNS-only, so Caddy can issue a Let's Encrypt certificate).
-2. Add a Caddy block for the new domain (copy `deploy/ladyjeybee.caddy`, remove the `X-Robots-Tag` line and `import origin_tls`) and reload Caddy.
-3. Redeploy with the new address and indexing switched on: `SITE_URL=https://clientdomain.co.ke NOINDEX= ./deploy/deploy.sh`
-4. Optionally redirect `ladyjeybee.biasharaos.com` to the new domain, then submit the new `/sitemap.xml` in Google Search Console.
+**Live address:** https://ladyjeybeeaurelia.co.ke (the client's own domain, served directly by Caddy with a free Let's Encrypt certificate).
+`ladyjeybee.biasharaos.com` redirects to it.
 
-While `NEXT_PUBLIC_NOINDEX=true` (the temporary subdomain) the site tells search engines not to index it.
+**DNS for the domain** (set where the domain's DNS is managed): `A` record `@` and `A` record `www`, both to `13.140.182.206`.
+Remove any `AAAA` records and old parking records. Keep any `MX`/`TXT` records used for email.
+
+**Switching to a different domain later**
+1. Point its `A` records (`@` and `www`) at `13.140.182.206`.
+2. Copy `deploy/caddy/ladyjeybeeaurelia.co.ke.caddy` to a new file with the new domain, then on the VPS run `bash deploy/install-caddy.sh site`
+   (the script validates the whole Caddy config first and rolls back on any error).
+3. Redeploy: `SITE_URL=https://newdomain.example ./deploy/deploy.sh`
+4. Add the new domain in Google Search Console and submit its `/sitemap.xml`.
+
+While `NEXT_PUBLIC_NOINDEX=true` (staging/temporary addresses only) the site tells search engines not to index it.
 
 ## Settings for going live
 
